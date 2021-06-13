@@ -24,9 +24,10 @@ Surface3 = createSprite(500,590,180,30);
 Surface3.shapeColor = "blue";
 Surface4 = createSprite(700,590,180,30);
 Surface4.shapeColor = "yellow";
+music.play();
 
     //create box sprite and give velocity
-Box = createSprite(600,300,40,40);
+Box = createSprite(random(20,750),100,40,40);
 
 Box.velocityY = 8;
 Box.velocityX = -5;
@@ -52,7 +53,9 @@ drawSprites();
         Box.shapeColour = "red";
         Box.velocityX = 0;
         Box.velocityY = 0;
-        text("Game Over",200,200);
+        textSize(30);
+        text("Game Over",400,300);
+        music.stop();
     }
     if(Box.isTouching(Surface3)){
         Box.bounceOff(Surface3);
